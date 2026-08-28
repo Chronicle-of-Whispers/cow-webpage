@@ -1,5 +1,7 @@
 # Chronicle of Whispers — Website
 
+Live: **<https://chronicle-of-whispers.github.io/cow-webpage/>**
+
 Statische Projektwebsite und zentrale Dokumentation für **Chronicle of Whispers (COW)**. Die Startseite ist eine eigene Astro-Produktseite; die Dokumentation wird mit Starlight aus Markdown-Dateien erzeugt.
 
 ## Stack
