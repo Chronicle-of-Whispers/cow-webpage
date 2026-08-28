@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureCard from './FeatureCard.astro';
+import Hero from './Hero.astro';
+import PreviewGallery from './PreviewGallery.astro';
+import ProjectCard from './ProjectCard.astro';
+import SectionHeading from './SectionHeading.astro';
+import SiteFooter from './SiteFooter.astro';
+import SiteHeader from './SiteHeader.astro';
+import { localePath, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t('meta.home.title')} description={t('meta.home.description')} lang={lang} path="/">
+  <SiteHeader lang={lang} path="/" />
+  <main id="main-content">
+    <Hero lang={lang} />
+
+    <section class="projects section shell" id="projects" aria-labelledby="projects-title">
+      <SectionHeading id="projects-title" eyebrow={t('projects.eyebrow')} title={t('projects.title')} text={t('projects.text')} />
+      <div class="project-grid">
+        <ProjectCard
+          lang={lang}
+          number="01"
+          name={t('projects.shadowAtlas.name')}
+          description={t('projects.shadowAtlas.description')}
+          href={localePath(lang, '/docs/projects/shadow-atlas/')}
+          status={t('projects.shadowAtlas.status')}
+          icon="atlas"
+        />
+        <ProjectCard
+          lang={lang}
+          number="02"
+          name={t('projects.mapViewer.name')}
+          description={t('projects.mapViewer.description')}
+          href={localePath(lang, '/docs/projects/map-viewer/')}
+          status={t('projects.mapViewer.status')}
+          tone="blue"
+          icon="map"
+        />
+        <ProjectCard
+          lang={lang}
+          number="03+"
+          name={t('projects.next.name')}
+          description={t('projects.next.description')}
+          status={t('projects.next.status')}
+          tone="muted"
+          icon="future"
+        />
+      </div>
+    </section>
+
+    <section class="showcase section" aria-labelledby="showcase-title">
+      <div class="shell">
+        <SectionHeading id="showcase-title" eyebrow={t('showcase.eyebrow')} title={t('showcase.title')} text={t('showcase.text')} align="center" />
+        <PreviewGallery lang={lang} />
+      </div>
+    </section>
+
+    <section class="features section shell" id="features" aria-labelledby="features-title">
+      <SectionHeading id="features-title" eyebrow={t('features.eyebrow')} title={t('features.title')} />
+      <div class="feature-grid">
+        <FeatureCard icon="obsidian" title={t('features.obsidian.title')} text={t('features.obsidian.text')} />
+        <FeatureCard icon="fog" title={t('features.fog.title')} text={t('features.fog.text')} />
+        <FeatureCard icon="server" title={t('features.server.title')} text={t('features.server.text')} />
+        <FeatureCard icon="source" title={t('features.source.title')} text={t('features.source.text')} />
+      </div>
+    </section>
+
+    <section class="release-cta section shell" aria-labelledby="release-title">
+      <div class="release-cta__mark" aria-hidden="true">C/W</div>
+      <div>
+        <p class="eyebrow"><span></span> {t('release.eyebrow')}</p>
+        <h2 id="release-title">{t('release.title')}</h2>
+        <p>{t('release.text')}</p>
+      </div>
+      <a class="button button--primary" href="https://github.com/Chronicle-of-Whispers" target="_blank" rel="noreferrer">{t('release.cta')} <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <SiteFooter lang={lang} />
+</BaseLayout>

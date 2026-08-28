@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs><radialGradient id="r"><stop stop-color="#3a2850"/><stop offset="1" stop-color="#090b10"/></radialGradient><pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse"><path d="M52 0H0v52" fill="none" stroke="#fff" stroke-opacity=".035"/></pattern></defs>
+  <rect width="1200" height="630" fill="url(#r)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g transform="translate(96 96)" fill="none" stroke="#cdb5f0" stroke-width="5"><path d="M70 0l59 34v68l-59 47-59-47V34L70 0Z"/><path d="M37 51c15-17 51-17 66 0-6 27-18 45-33 57-15-12-27-30-33-57Z"/><path d="M70 69v25" stroke-linecap="round"/></g>
+  <text x="96" y="330" fill="#f0eff4" font-size="74" font-family="Georgia">Chronicle of Whispers</text>
+  <text x="100" y="392" fill="#cdb5f0" font-size="20" font-family="Arial" letter-spacing="7">TOOLS FOR EVERY STORY</text>
+  <text x="100" y="474" fill="#a5a7b0" font-size="24" font-family="Arial">Open-source campaign tools and Obsidian plugins.</text>
+</svg>

@@ -1,0 +1,22 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+import { sitePath } from '../utils/paths';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="preview-gallery">
+  <figure class="preview preview--wide">
+    <img src={sitePath('/screenshots/map-viewer.svg')} alt={t('gallery.mapViewer.alt')} loading="lazy" />
+    <figcaption><span>{t('gallery.mapViewer.label')}</span> {t('gallery.mapViewer.caption')}</figcaption>
+  </figure>
+  <figure class="preview">
+    <img src={sitePath('/screenshots/obsidian-panel.svg')} alt={t('gallery.vault.alt')} loading="lazy" />
+    <figcaption><span>{t('gallery.vault.label')}</span> {t('gallery.vault.caption')}</figcaption>
+  </figure>
+</div>

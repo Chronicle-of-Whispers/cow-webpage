@@ -1,0 +1,42 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  number: string;
+  name: string;
+  description: string;
+  href?: string;
+  status: string;
+  tone?: 'violet' | 'blue' | 'muted';
+  icon: 'atlas' | 'map' | 'future';
+}
+
+const { lang, number, name, description, href, status, tone = 'violet', icon } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<article class:list={['project-card', `project-card--${tone}`]}>
+  <div class="project-card__top">
+    <span class="project-card__number">{number}</span>
+    <span class="status"><i></i>{status}</span>
+  </div>
+  <div class:list={['project-icon', `project-icon--${icon}`]} aria-hidden="true">
+    {icon === 'atlas' && (
+      <svg viewBox="0 0 64 64"><path d="m8 14 15-6 18 7 15-6v41l-15 6-18-7-15 6V14Z"/><path d="M23 8v41M41 15v41"/><circle cx="33" cy="29" r="5"/></svg>
+    )}
+    {icon === 'map' && (
+      <svg viewBox="0 0 64 64"><path d="M8 11h48v40H8z"/><path d="m13 43 11-12 8 7 10-15 9 20"/><circle cx="22" cy="22" r="4"/></svg>
+    )}
+    {icon === 'future' && (
+      <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23"/><path d="M32 19v26M19 32h26"/></svg>
+    )}
+  </div>
+  <h3>{name}</h3>
+  <p>{description}</p>
+  {href ? (
+    <a href={href}>{t('projectCard.more')} <span aria-hidden="true">→</span></a>
+  ) : (
+    <span class="project-card__soon">{t('projectCard.soon')}</span>
+  )}
+</article>

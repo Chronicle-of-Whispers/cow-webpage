@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
+  <defs>
+    <radialGradient id="sea"><stop stop-color="#253446"/><stop offset="1" stop-color="#101722"/></radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0v48" fill="none" stroke="#aab1c0" stroke-opacity=".07"/></pattern>
+  </defs>
+  <rect width="960" height="600" fill="url(#sea)"/>
+  <rect width="960" height="600" fill="url(#grid)"/>
+  <g fill="#384238" stroke="#768371" stroke-opacity=".45" stroke-width="2">
+    <path d="M114 50c99 25 123 91 197 93 47 1 77-30 115-8 51 30 23 84 74 110 42 22 104-16 141 15 29 25 3 56 26 91 34 52 96 35 126 79 18 27 7 65-19 120H126c-17-48-11-93 20-123 34-33 73-24 91-60 22-45-31-71-11-123 20-51 75-54 74-93-2-50-88-57-186-101Z"/>
+    <path d="M641 30c42 30 86 47 135 50 47 3 64-19 113 3v126c-43 5-86-1-105-31-24-37 9-72-21-96-27-21-67 4-91-13-14-10-24-23-31-39Z"/>
+  </g>
+  <g fill="none" stroke="#aab7c5" stroke-opacity=".2">
+    <path d="M199 436c105-51 178-97 255-160 98-81 189-119 340-146" stroke-dasharray="6 10"/>
+    <path d="M236 257c96 44 168 73 251 80 102 9 175 41 245 101"/>
+    <circle cx="454" cy="276" r="96"/><circle cx="454" cy="276" r="155"/>
+  </g>
+  <g fill="#cdb5f0">
+    <circle cx="454" cy="276" r="18" opacity=".22" filter="url(#glow)"/><circle cx="454" cy="276" r="5"/>
+    <circle cx="236" cy="257" r="4"/><circle cx="732" cy="438" r="4"/><circle cx="794" cy="130" r="4"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#c4cad3">
+    <text x="470" y="268" font-size="13" letter-spacing="3">THE ASHEN COAST</text>
+    <text x="470" y="289" font-size="9" fill="#808895" letter-spacing="2">DISCOVERED LOCATION</text>
+    <text x="199" y="246" font-size="10" fill="#89939e" letter-spacing="2">WESTREACH</text>
+    <text x="705" y="458" font-size="10" fill="#89939e" letter-spacing="2">HOLLOW MERE</text>
+  </g>
+  <path d="M60 65v-18h18M900 65v-18h-18M60 535v18h18M900 535v18h-18" fill="none" stroke="#cdb5f0" stroke-opacity=".4"/>
+</svg>

@@ -1,0 +1,19 @@
+---
+import { localePath, useTranslations, type Lang } from '../i18n/ui';
+import { sitePath } from '../utils/paths';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<a class="brand" href={localePath(lang)} aria-label={t('brand.home')}>
+  <img src={sitePath('/logo/mark.svg')} width="42" height="42" alt="" />
+  <span class="brand__text">
+    <strong>Chronicle</strong>
+    <span>of Whispers</span>
+  </span>
+</a>

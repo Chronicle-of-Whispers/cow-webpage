@@ -1,0 +1,38 @@
+---
+import Brand from './Brand.astro';
+import { localePath, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell site-footer__grid">
+    <div>
+      <Brand lang={lang} />
+      <p>{t('footer.tagline')}</p>
+    </div>
+    <div class="site-footer__links">
+      <div>
+        <strong>{t('footer.project')}</strong>
+        <a href={localePath(lang, '/docs/')}>{t('footer.docs')}</a>
+        <a href="https://github.com/Chronicle-of-Whispers">{t('footer.github')}</a>
+        <a href="https://github.com/Chronicle-of-Whispers">{t('footer.releases')}</a>
+      </div>
+      <div>
+        <strong>{t('footer.legal')}</strong>
+        <a href="https://github.com/Chronicle-of-Whispers/cow-shadow-atlas/blob/main/LICENSE">{t('footer.license')}</a>
+        <a href="mailto:chronicleofwhispers@outlook.com">{t('footer.contact')}</a>
+      </div>
+    </div>
+  </div>
+  <div class="shell site-footer__bottom">
+    <span>© {year} Chronicle of Whispers</span>
+    <span>{t('footer.madeFor')}</span>
+  </div>
+</footer>

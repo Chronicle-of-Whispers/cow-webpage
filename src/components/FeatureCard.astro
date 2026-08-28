@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  icon: 'obsidian' | 'fog' | 'server' | 'source';
+}
+
+const { title, text, icon } = Astro.props;
+---
+
+<article class="feature-card">
+  <div class:list={['feature-card__icon', `feature-card__icon--${icon}`]} aria-hidden="true">
+    {icon === 'obsidian' && <span>◇</span>}
+    {icon === 'fog' && <span>≋</span>}
+    {icon === 'server' && <span>⌁</span>}
+    {icon === 'source' && <span>&lt;/&gt;</span>}
+  </div>
+  <h3>{title}</h3>
+  <p>{text}</p>
+</article>

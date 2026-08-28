@@ -1,0 +1,44 @@
+---
+import Brand from './Brand.astro';
+import { LANGUAGES, localePath, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  /** Path of the current page within its language, used by the language switcher. */
+  path?: string;
+}
+
+const { lang, path = '/' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <Brand lang={lang} />
+    <nav aria-label={t('nav.projects')}>
+      <a class="nav-secondary" href="#projects">{t('nav.projects')}</a>
+      <a class="nav-secondary" href="#features">{t('nav.features')}</a>
+      <a href={localePath(lang, '/docs/')}>{t('nav.docs')}</a>
+      <a
+        class="nav-github"
+        href="https://github.com/Chronicle-of-Whispers"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {t('nav.github')} <span aria-hidden="true">↗</span>
+      </a>
+      <span class="lang-switch" role="group" aria-label={t('nav.language')}>
+        {LANGUAGES.map((code) => (
+          <a
+            href={localePath(code, path)}
+            hreflang={code}
+            lang={code}
+            aria-current={code === lang ? 'true' : undefined}
+          >
+            {code.toUpperCase()}
+          </a>
+        ))}
+      </span>
+    </nav>
+  </div>
+</header>

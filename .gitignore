@@ -1,0 +1,25 @@
+# vscode
+.vscode
+
+# npm
+node_modules/
+
+# Astro build output
+dist/
+.astro/
+
+# Local notes / scratch files
+TODO
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+

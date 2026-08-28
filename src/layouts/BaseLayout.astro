@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+import { sitePath } from '../utils/paths';
+import { LANGUAGES, localePath, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+  /** Path of this page within its language, e.g. '/' — used for the hreflang alternates. */
+  path?: string;
+}
+
+const { title, description, lang, path = '/' } = Astro.props;
+const t = useTranslations(lang);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(sitePath('/screenshots/og-cover.svg'), Astro.site);
+---
+
+<!doctype html>
+<html lang={t('htmlLang')} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#090b10" />
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/svg+xml" href={sitePath('/logo/favicon.svg')} />
+    <link rel="canonical" href={canonicalURL} />
+    {LANGUAGES.map((alt) => (
+      <link rel="alternate" hreflang={alt} href={new URL(localePath(alt, path), Astro.site)} />
+    ))}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={t('ogLocale')} />
+    <meta property="og:site_name" content="Chronicle of Whispers" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{t('skipLink')}</a>
+    <slot />
+  </body>
+</html>

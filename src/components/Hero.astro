@@ -1,0 +1,45 @@
+---
+import { localePath, useTranslations, type Lang } from '../i18n/ui';
+import { sitePath } from '../utils/paths';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="hero shell" aria-labelledby="hero-title">
+  <div class="hero__copy">
+    <p class="eyebrow"><span></span> {t('hero.eyebrow')}</p>
+    <h1 id="hero-title">{t('hero.titleLead')}<br /><em>{t('hero.titleAccent')}</em></h1>
+    <p class="hero__lede">{t('hero.lede')}</p>
+    <div class="hero__actions">
+      <a class="button button--primary" href={localePath(lang, '/docs/')}>{t('hero.ctaDocs')}</a>
+      <a class="button button--ghost" href="https://github.com/Chronicle-of-Whispers" target="_blank" rel="noreferrer">
+        {t('hero.ctaGithub')} <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <p class="hero__meta">
+      <span>{t('hero.meta1')}</span><span>{t('hero.meta2')}</span><span>{t('hero.meta3')}</span>
+    </p>
+  </div>
+
+  <div class="hero__visual" aria-label={t('hero.visualLabel')}>
+    <div class="orb orb--one"></div>
+    <div class="orb orb--two"></div>
+    <div class="map-frame">
+      <div class="map-frame__bar">
+        <span></span><span></span><span></span>
+        <small>SHADOW ATLAS / VAULT</small>
+      </div>
+      <img src={sitePath('/screenshots/shadow-atlas.svg')} alt={t('hero.imageAlt')} />
+    </div>
+    <div class="coordinate-card" aria-hidden="true">
+      <span>{t('hero.cardLabel')}</span>
+      <strong>{t('hero.cardTitle')}</strong>
+      <small>48° 12′ N · 16° 22′ E</small>
+    </div>
+  </div>
+</section>

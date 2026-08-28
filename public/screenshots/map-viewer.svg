@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#151b25"/><stop offset="1" stop-color="#0a0e14"/></linearGradient>
+    <linearGradient id="land" x2="0" y2="1"><stop stop-color="#435045"/><stop offset="1" stop-color="#262f2c"/></linearGradient>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".035"/></pattern>
+  </defs>
+  <rect width="1200" height="675" fill="#090c12"/>
+  <rect x="18" y="18" width="1164" height="639" rx="8" fill="url(#bg)" stroke="#b9a5d2" stroke-opacity=".2"/>
+  <rect x="18" y="18" width="1164" height="46" rx="8" fill="#151923"/>
+  <circle cx="44" cy="41" r="4" fill="#696e78"/><circle cx="60" cy="41" r="4" fill="#696e78"/><circle cx="76" cy="41" r="4" fill="#696e78"/>
+  <text x="106" y="46" fill="#8f95a0" font-size="10" font-family="Arial" letter-spacing="2">MAP VIEWER / THE NORTHERN REACH</text>
+  <g transform="translate(34 80)">
+    <rect width="910" height="558" rx="4" fill="#121923"/>
+    <path d="M31 64c100-57 159 19 246-21 76-35 112-20 160 40 59 74 129 38 206 74 72 33 65 90 145 130 42 21 85 24 122 19v252H0V117c11-19 21-37 31-53Z" fill="url(#land)" stroke="#7a897b" stroke-opacity=".38"/>
+    <path d="M0 0h910v558H0z" fill="url(#g)"/>
+    <g fill="none" stroke="#c0cad4" stroke-opacity=".18">
+      <path d="M88 479c64-56 135-88 212-118 91-35 114-96 206-115 105-22 182 39 301-56" stroke-dasharray="7 9"/>
+      <path d="M248 0c24 69 83 99 102 166 22 78-15 131 17 208 26 64 83 97 109 184"/>
+    </g>
+    <g fill="#cdb5f0" stroke="#251d32" stroke-width="4">
+      <circle cx="300" cy="361" r="8"/><circle cx="506" cy="246" r="8"/><circle cx="807" cy="190" r="8"/>
+    </g>
+    <g font-family="Arial" font-size="11" letter-spacing="2" fill="#b9bec7">
+      <text x="318" y="356">GREYHAVEN</text><text x="524" y="241">OLD WATCH</text><text x="730" y="180">VEILED PASS</text>
+    </g>
+    <path d="M584 0h326v558H675c-27-53-36-108-20-163 18-62 78-98 64-155-17-67-115-89-135-171-5-22-5-45 0-69Z" fill="#07090d" opacity=".77"/>
+    <path d="M584 0c-5 24-5 47 0 69 20 82 118 104 135 171 14 57-46 93-64 155-16 55-7 110 20 163" fill="none" stroke="#9b7ac2" stroke-opacity=".6" stroke-dasharray="3 8"/>
+  </g>
+  <g transform="translate(962 80)" font-family="Arial">
+    <rect width="202" height="558" rx="4" fill="#10141c" stroke="#fff" stroke-opacity=".06"/>
+    <text x="18" y="34" fill="#d9dadd" font-size="11" letter-spacing="2">LAYERS</text>
+    <g fill="#8b919c" font-size="10"><text x="42" y="78">Locations</text><text x="42" y="116">Routes</text><text x="42" y="154">Fog of War</text><text x="42" y="192">Notes</text></g>
+    <g fill="none" stroke="#8c78a5"><rect x="18" y="65" width="12" height="12" rx="2"/><rect x="18" y="103" width="12" height="12" rx="2"/><rect x="18" y="141" width="12" height="12" rx="2"/></g>
+    <path d="m21 70 3 3 6-7M21 108l3 3 6-7M21 146l3 3 6-7" fill="none" stroke="#cdb5f0"/>
+    <line x1="18" y1="221" x2="184" y2="221" stroke="#fff" stroke-opacity=".08"/>
+    <text x="18" y="252" fill="#d9dadd" font-size="11" letter-spacing="2">SESSION</text>
+    <text x="18" y="282" fill="#747b86" font-size="10">3 players connected</text>
+  </g>
+</svg>
