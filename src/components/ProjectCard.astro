@@ -7,12 +7,15 @@ interface Props {
   name: string;
   description: string;
   href?: string;
+  /** Project-specific outbound link (release download or repository). */
+  actionHref?: string;
+  actionLabel?: string;
   status: string;
   tone?: 'violet' | 'blue' | 'muted';
   icon: 'atlas' | 'map' | 'future';
 }
 
-const { lang, number, name, description, href, status, tone = 'violet', icon } = Astro.props;
+const { lang, number, name, description, href, actionHref, actionLabel, status, tone = 'violet', icon } = Astro.props;
 const t = useTranslations(lang);
 ---
 
@@ -34,8 +37,15 @@ const t = useTranslations(lang);
   </div>
   <h3>{name}</h3>
   <p>{description}</p>
-  {href ? (
-    <a href={href}>{t('projectCard.more')} <span aria-hidden="true">→</span></a>
+  {href || actionHref ? (
+    <div class="project-card__links">
+      {href && <a href={href}>{t('projectCard.more')} <span aria-hidden="true">→</span></a>}
+      {actionHref && (
+        <a href={actionHref} target="_blank" rel="noreferrer">
+          {actionLabel} <span aria-hidden="true">↗</span>
+        </a>
+      )}
+    </div>
   ) : (
     <span class="project-card__soon">{t('projectCard.soon')}</span>
   )}

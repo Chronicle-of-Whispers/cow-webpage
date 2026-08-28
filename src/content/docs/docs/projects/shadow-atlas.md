@@ -1,49 +1,49 @@
 ---
 title: Shadow Atlas
-description: Obsidian-Plugin, das Battle Maps auf den Bildschirm am Spieltisch bringt.
+description: Obsidian plugin that puts battle maps on the screen at your game table.
 ---
 
-Shadow Atlas ist für den **Spieltisch mit Bildschirm** konzipiert: einen Fernseher oder Monitor in der Tischmitte, einen zweiten Bildschirm neben der Spielleitung oder Tablets der Mitspielenden. Die Spielleitung arbeitet in Obsidian an der vollständigen Karte, während auf dem Tischbildschirm nur das erscheint, was die Gruppe sehen soll.
+Shadow Atlas is built for the **game table with a screen**: a TV or monitor in the middle of the table, a second display next to the game master, or your players' tablets. The game master works on the full map inside Obsidian while the table screen only shows what the party is meant to see.
 
-Eine `.samap`-Datei im Vault wird dabei zur voll interaktiven Battle Map: Fog of War malen, Pins, Bilder und Videos platzieren, ein Grid einblenden und Kartenobjekte mit anderen Notizen verknüpfen. Ein eingebauter lokaler Webserver liefert die Tischansicht — jedes Gerät im selben Netzwerk öffnet dafür nur eine URL im Browser, ohne Installation.
+A `.samap` file in your vault becomes a fully interactive battle map: paint fog of war, place pins, images and videos, overlay a grid, and link map objects to other notes. A built-in local web server serves the table view — any device on the same network just opens a URL in its browser, no installation required.
 
-## Typische Aufbauten
+## Typical setups
 
-- **Tisch-TV oder Beamer**: ein Browser im Vollbild auf dem gemeinsamen Bildschirm zeigt die freigegebene Karte.
-- **Zweiter Monitor**: die Spielleitung behält Obsidian auf dem Hauptbildschirm, die Gruppe sieht den zweiten.
-- **Eigene Geräte**: Tablets oder Laptops der Mitspielenden verbinden sich parallel auf dieselbe Adresse.
+- **Table TV or projector**: a full-screen browser on the shared display shows the map you released.
+- **Second monitor**: the game master keeps Obsidian on the main screen, the party watches the second one.
+- **Players' own devices**: tablets or laptops connect to the same address in parallel.
 
-## Funktionen
+## Features
 
-- **Battle-Map-Ansicht** für `.samap`-Dateien, angetrieben von der gebündelten [Map-Viewer-Engine](../map-viewer/).
-- **Fog of War** mit Circle-, Rectangle-, Square- und Polygon-Werkzeug.
-- **Pins, Bilder, Videos und ein Grid**, die sich auf der Karte platzieren und verschieben lassen.
-- **Live-Spieleransicht** im LAN — der Tischbildschirm öffnet einfach eine URL im Browser.
-- **Live View** überträgt jede Kartenänderung sofort, oder du teilst bei Bedarf manuell.
-- **Live Pan & Zoom**, damit die Spieleransicht der Kamera der Spielleitung folgt.
-- **Share Dock** — eine Seitenleiste zum Teilen und erneuten Teilen von Karten, Bildern, Videos und Notizausschnitten, jeweils mit eigenem Verlauf.
-- **Overlay-Sharing** aus dem Datei-Menü, einer Editor-Auswahl, dem aktiven Tab oder Lesemodus-Bildern/-Videos, optional mit einem Inline-Share-Button.
-- **Objekt-Links**, die Kartenobjekte mit Notizen und Überschriften im Vault verbinden.
-- **Lokalisierung** (Englisch/Deutsch), folgt der Obsidian-Anzeigesprache.
+- **Battle map view** for `.samap` files, powered by the bundled [Map Viewer engine](../map-viewer/).
+- **Fog of war** with circle, rectangle, square and polygon reveal tools.
+- **Pins, images, videos and a grid layer** you can place and move on the map.
+- **Live table view** on your LAN — the table screen just opens a URL in a browser.
+- **Live View** broadcasts every map change instantly, or you share on demand.
+- **Live Pan & Zoom** so the table view follows the game master's camera.
+- **Share Dock** — a sidebar for sharing and re-sharing maps, images, videos and note excerpts, each with its own history.
+- **Overlay sharing** from the file menu, an editor selection, the active tab or reading-mode images and videos, with an optional inline share button.
+- **Object links** connecting map objects to notes and headings in your vault.
+- **Localisation** (English/German), following your Obsidian display language.
 
-Details zu allen Einstellungen: [Settings](../../reference/settings/). Bedienung von Sharing und Live-Funktionen: [Sharing](../../guides/sharing/).
+All settings are listed under [Settings](../../reference/settings/). Sharing and live features are covered in [Sharing](../../guides/sharing/).
 
 ## Workflow
 
-1. Rechtsklick auf einen Ordner → **[CoW] - New shadow atlas map**, dann die neue `.samap`-Datei öffnen.
-2. Ein Bild oder Video auf die Karte ziehen, um das Basisbild zu setzen.
-3. Über die Kopfleiste **Share with players**, **Live Pan & Zoom** oder **Live View** aktivieren.
-4. Objekte (Pins, Bilder, Videos) platzieren, mit Notizen verlinken (Popover-Link) oder direkt zu einer Vault-Datei verlinken (Obsidian-Link).
-5. Bei Bedarf im [Share Dock](../../guides/sharing/) Bilder, Videos oder Notizausschnitte zusätzlich teilen.
+1. Right-click a folder → **[CoW] - New shadow atlas map**, then open the new `.samap` file.
+2. Drag an image or video onto the map to set the base map.
+3. Use the header actions to enable **Share with players**, **Live Pan & Zoom** or **Live View**.
+4. Place objects (pins, images, videos) and link them to notes (popover link) or directly to a vault file (Obsidian link).
+5. If needed, share images, videos or note excerpts alongside the map from the [Share Dock](../../guides/sharing/).
 
-## Datenhaltung
+## Data storage
 
-Jede `.samap`-Datei bleibt eine gewöhnliche, lesbare JSON-Datei im Vault. Die zugehörigen Ressourcen (Fog-Maske, Objektgraph, Basisbild) liegen daneben in einem versteckten Ordner `.cow-shadow-atlas/<map-id>/`. Wird eine `.samap`-Datei per „Make a copy" dupliziert, erhält die Kopie automatisch eine neue ID und eine eigene Kopie ihrer Ressourcen, sodass beide Karten unabhängig voneinander bleiben.
+Every `.samap` file stays a plain, readable JSON file in your vault. Its resources (fog mask, object graph, base image) sit next to it in a hidden `.cow-shadow-atlas/<map-id>/` folder. If you duplicate a `.samap` file via "Make a copy", the copy automatically receives a fresh id and its own copy of those resources, so both maps stay independent.
 
-:::note[Voraussetzungen]
-Shadow Atlas benötigt Obsidian 1.8.7 oder neuer und läuft nur auf dem **Desktop** (der lokale Server ist Node-basiert). Für den Tischbildschirm genügt ein beliebiges Gerät mit modernem Browser im selben Netzwerk.
+:::note[Requirements]
+Shadow Atlas needs Obsidian 1.8.7 or newer and runs on the **desktop** only (the local server is Node-based). Any device with a modern browser on the same network works as the table screen.
 :::
 
 ## Status
 
-Aktuelle Version: **1.0.0**, Lizenz [GPL-3.0-or-later](https://github.com/Chronicle-of-Whispers). Der Community-Plugin-Review bei Obsidian steht noch aus — bis dahin erfolgt die Installation manuell aus einem GitHub Release (siehe [Installation](../../installation/)).
+Current version: **1.0.0**, licensed [GPL-3.0-or-later](https://github.com/Chronicle-of-Whispers). The Obsidian community plugin review is still pending — until then, install manually from a GitHub release (see [Installation](../../installation/)).

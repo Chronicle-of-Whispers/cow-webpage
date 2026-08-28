@@ -1,32 +1,32 @@
 ---
 title: Server
-description: Den lokalen Server für die Spieleransicht konfigurieren und betreiben.
+description: Configure and run the local server for the table view.
 ---
 
-Shadow Atlas startet automatisch einen lokalen HTTP/WebSocket-Server, sobald das Plugin lädt. Er liefert die Ansicht für den Bildschirm am Spieltisch aus und läuft, solange Obsidian offen ist — ein separater Startbefehl ist nicht nötig.
+Shadow Atlas automatically starts a local HTTP/WebSocket server as soon as the plugin loads. It serves the view for the screen at your game table and keeps running as long as Obsidian is open — there is no separate start command.
 
-## Adresse finden
+## Finding the address
 
-- Die Kartenansicht zeigt die Adresse für den Tischbildschirm als kleine Pille unten links (z. B. `http://192.168.0.10:8000`).
-- Der [Share Dock](../sharing/#share-dock) zeigt dieselbe Adresse am Kopf; ein Klick kopiert die vollständige URL.
-- In den Plugin-Einstellungen erscheint sie zusätzlich unter **Current address**, sobald der Server läuft.
+- The map view shows the table screen's address as a small pill in the bottom-left corner (e.g. `http://192.168.0.10:8000`).
+- The [Share Dock](../sharing/#share-dock) shows the same address at the top; clicking it copies the full URL.
+- The plugin settings show it under **Current address** whenever the server is running.
 
-## Konfiguration
+## Configuration
 
-| Einstellung | Standard | Bedeutung |
+| Setting | Default | Meaning |
 | --- | --- | --- |
-| Port mode | `Range` | `Fixed` (ein Port) oder `Range` (erster freier Port im Bereich). |
-| Port / Port range | `8000`–`8099` | Gültiger Bereich: 1024–65535. |
-| Allow access from other devices (LAN) | an | An: Server bindet an `0.0.0.0` (Tisch-TV, Tablets und andere Geräte im LAN). Aus: nur `127.0.0.1` — genügt für einen zweiten Monitor am selben Rechner. |
+| Port mode | `Range` | `Fixed` (one port) or `Range` (first free port in a range). |
+| Port / Port range | `8000`–`8099` | Valid range: 1024–65535. |
+| Allow access from other devices (LAN) | on | On: the server binds to `0.0.0.0` (table TV, tablets and other LAN devices). Off: `127.0.0.1` only — enough for a second monitor on the same machine. |
 
-Änderungen wirken erst nach **Apply changes → Restart server** in den Einstellungen.
+Changes take effect only after **Apply changes → Restart server** in the settings.
 
-Vollständige Liste aller Einstellungen: [Settings](../../reference/settings/).
+Complete list of all settings: [Settings](../../reference/settings/).
 
-## Wenn kein Port frei ist
+## When no port is free
 
-Findet Shadow Atlas beim Start keinen freien Port im konfigurierten Bereich, bleibt das Plugin voll funktionsfähig — nur die Tischansicht ist deaktiviert, bis ein Port frei wird oder die Einstellungen angepasst werden.
+If Shadow Atlas cannot find a free port in the configured range at startup, the plugin stays fully functional — only the table view is disabled until a port frees up or the settings are adjusted.
 
-## Sicherheit
+## Security
 
-Der Server bietet **keine Authentifizierung und keine Verschlüsselung**. Jeder mit Zugriff auf den freigegebenen Port und die Adresse kann die geteilte Karte sehen. Aktiviere **Allow access from other devices** nur in einem vertrauenswürdigen lokalen Netzwerk und öffne den Port niemals zum Internet (z. B. per Port-Forwarding).
+The server offers **no authentication and no encryption**. Anyone with access to the open port and the address can see the shared map. Only enable **Allow access from other devices** on a trusted local network, and never expose the port to the internet (e.g. through port forwarding).

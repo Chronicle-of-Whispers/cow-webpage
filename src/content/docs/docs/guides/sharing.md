@@ -1,58 +1,58 @@
 ---
 title: Sharing
-description: Karten, Bilder, Videos und Notizen live auf den Spieltisch-Bildschirm bringen.
+description: Put maps, images, videos and notes live on the game table screen.
 ---
 
-Shadow Atlas unterscheidet zwei Arten von Freigaben: eine **Karte** teilen und ein **Overlay** (Bild, Video oder Textausschnitt) teilen. Beide erscheinen auf der Tisch-/Spieleransicht, aber nie gleichzeitig — eine neu geteilte Karte beendet ein aktives Overlay und umgekehrt.
+Shadow Atlas distinguishes two kinds of share: sharing a **map** and sharing an **overlay** (an image, video or text excerpt). Both appear on the table/player view, but never at the same time — sharing a new map ends an active overlay and vice versa.
 
-Die Tischansicht ist eine gewöhnliche Webseite: einmal im Browser des Tischbildschirms geöffnet (am besten im Vollbild), bleibt sie den ganzen Abend stehen und aktualisiert sich selbst.
+The table view is an ordinary web page: opened once in the browser of your table screen (ideally in full screen), it stays up all evening and refreshes itself.
 
-## Eine Karte teilen
+## Sharing a map
 
-- Header-Aktion **Share with players** in der Kartenansicht, oder
-- Rechtsklick auf den Tab / **⋮**-Menü → **[CoW] - Share in Shadow Atlas**, oder
-- Befehl **Share current map with players**.
+- The **Share with players** header action in the map view, or
+- right-click the tab / **⋮** menu → **[CoW] - Share in Shadow Atlas**, or
+- the **Share current map with players** command.
 
 ### Live View
 
-Der Kopfleisten-Schalter **Live View** bestimmt, ob Änderungen automatisch übertragen werden:
+The **Live View** header toggle controls whether changes are pushed automatically:
 
-- **aktiv** — jede Änderung (Fog, Objekte, Kartenbild) wird sofort an Spieler gesendet.
-- **inaktiv** — Änderungen bleiben lokal, bis erneut **Share with players** gedrückt wird.
+- **on** — every change (fog, objects, map image) is sent to the table view immediately.
+- **off** — changes stay local until you press **Share with players** again.
 
-Der Startzustand neuer Karten wird über die Einstellung **Default live view** festgelegt.
+The starting state for new maps is controlled by the **Default live view** setting.
 
 ### Live Pan & Zoom
 
-Der Schalter **Live Pan & Zoom** spiegelt die Kamera (Position + Zoom) der Spielleitung live an alle verbundenen Spieler und sperrt währenddessen deren eigene Pan-/Zoom-Eingaben. Der Zustand ist bewusst **nicht persistent** und ohne eigene Einstellung — er startet nach jedem Obsidian-Neustart deaktiviert.
+The **Live Pan & Zoom** toggle mirrors the game master's camera (position and zoom) to all connected clients and locks their own pan/zoom input while active. The state is deliberately **not persisted** and has no setting of its own — it starts disabled after every Obsidian restart.
 
-### Live Cursor
+### Live cursor
 
-Leertaste gedrückt halten, um die eigene Zeigerposition als farbigen Punkt an die Spieler-Seite zu senden. Größe und Farbe lassen sich in der Toolbar unter **Live Cursor** einstellen.
+Hold the space bar to broadcast your own pointer position as a coloured dot to the table view. Size and colour can be adjusted in the toolbar under **Live Cursor**.
 
-## Ein Overlay teilen
+## Sharing an overlay
 
-Überträgt Bilder, Videos oder Textausschnitte als eigenständige Ansicht auf die Spieler-Seite, ohne die aktuell geteilte Karte zu verlassen (sie wird beim Beenden des Overlays wiederhergestellt).
+Overlays put images, videos or text excerpts on the table view as a standalone display without giving up the currently shared map (it is restored when the overlay closes).
 
-Einstiegspunkte:
+Entry points:
 
-- **Datei-Menü** auf eine Markdown-, Bild-, Video- oder `.samap`-Datei.
-- **Editor-Auswahl** — markierten Text per Kontextmenü teilen.
-- **Aktiver Tab** über den Befehl **Share active tab with players** (teilt bevorzugt eine Lesemodus-Auswahl, sonst den ganzen Tab).
-- **Lesemodus-Kontextmenü** auf einem Bild oder Video.
-- **Inline-Share-Button**, der beim Überfahren von Bildern, Videos, Zitatblöcken und Überschriften im Lesemodus erscheint (abschaltbar über die Einstellung **Inline reading-mode share button**).
+- **File menu** on a Markdown, image, video or `.samap` file.
+- **Editor selection** — share selected text via the context menu.
+- **Active tab** via the **Share active tab with players** command (prefers a reading-mode selection, otherwise the whole tab).
+- **Reading-mode context menu** on an image or video.
+- **Inline share button** shown when hovering images, videos, blockquotes and headings in reading mode (can be turned off with the **Inline reading-mode share button** setting).
 
-Geteilte Videos werden im Share Dock mit nativen Steuerelementen angezeigt; Play/Pause/Seek dort steuert die Wiedergabe auf der Spieler-Seite. Spieler hören dabei nie Ton — nur Bild und Zeitstempel werden synchronisiert.
+Shared videos appear in the Share Dock with native controls; play/pause/seek there drives playback on the table view. Viewers never hear audio — only the picture and the timestamp are synchronised.
 
 ## Share Dock
 
-Rechte Seitenleiste (Befehl **Open share dock**), zwei Tabs:
+Right sidebar (command **Open share dock**), with two tabs:
 
-- **Maps** — aktuell geteilte Karte plus Verlauf (Länge über **Map history length** einstellbar). Aktionen je Eintrag: **Go to source**, **Share again**, **Delete from history**; die aktive Karte zusätzlich **Stop sharing this map**.
-- **Overlays** — aktuelles Overlay plus Verlauf (Länge über **Overlay history length**), gleiche Aktionen, zusätzlich **Close current share**.
+- **Maps** — the currently shared map plus history (length configurable via **Map history length**). Per-entry actions: **Go to source**, **Share again**, **Delete from history**; the active map additionally offers **Stop sharing this map**.
+- **Overlays** — the current overlay plus history (length via **Overlay history length**), the same actions plus **Close current share**.
 
-Eine Adress-Pille am Kopf des Docks zeigt `ip:port`; ein Klick kopiert die vollständige Spieler-URL in die Zwischenablage.
+An address pill at the top of the dock shows `ip:port`; clicking it copies the full URL to your clipboard.
 
-## Über einen Obsidian-Neustart hinweg
+## Across an Obsidian restart
 
-Der aktuell geteilte Zustand (Karte, Overlay, beide Verläufe) wird persistiert und beim nächsten Start automatisch wiederhergestellt — die Freigabe muss nach einem Neustart nicht erneut gestartet werden.
+The currently shared state (map, overlay and both histories) is persisted and restored automatically on the next start — you do not have to re-share after a restart.

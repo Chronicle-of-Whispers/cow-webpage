@@ -1,32 +1,32 @@
 ---
 title: Map Viewer
-description: Die Three.js-Kartenengine hinter Shadow Atlas.
+description: The Three.js map engine behind Shadow Atlas.
 ---
 
-Map Viewer ist die vanilla-JavaScript-Kartenengine (Three.js), die [Shadow Atlas](../shadow-atlas/) antreibt: sie liefert das `<map-viewer>`-Custom-Element sowohl für die Editor-Ansicht in Obsidian als auch für die schreibgeschützte Tischansicht, die der lokale Server an den Bildschirm am Spieltisch ausliefert. Map Viewer ist kein eigenständig installierbares Produkt, sondern die Engine im Hintergrund.
+Map Viewer is the vanilla-JavaScript map engine (Three.js) that powers [Shadow Atlas](../shadow-atlas/): it provides the `<map-viewer>` custom element for both the editor view inside Obsidian and the read-only table view that the local server delivers to the screen at your game table. Map Viewer is not a separately installable product — it is the engine underneath.
 
-## Funktionen
+## Features
 
-- Zoombare, per Maus/Touch verschiebbare Kartenansicht mit Zentrieren und 90°-Rotation.
-- **Fog of War** mit vier Werkzeugen: Circle, Square, Rectangle, Polygon.
-- **Objekte**: Pins (15 Formen + eigene Uploads, 12 Farben), Bilder und Videos, mit Label, Beschreibung (Markdown) und Links.
-- **Layer-System**: beliebig viele Objekt-Layer plus die immer vorhandenen Fog-, Grid- und Map-Layer, jeweils mit Sichtbarkeit, Spieler-Sichtbarkeit und Sperre.
-- **Live Cursor**: die eigene Zeigerposition an den Tischbildschirm senden.
-- **Zwei visuelle Themes**: `obsidian` (übernimmt Farben/Schrift des aktiven Obsidian-Themes) und `default` (fester dunkler Look).
-- Automatisches Speichern von Fog, Objekten und Kameraposition nach jeder Änderung.
+- Zoomable, pannable map view with recentering and 90° rotation.
+- **Fog of war** with four tools: circle, square, rectangle and polygon.
+- **Objects**: pins (15 shapes plus your own uploads, 12 colours), images and videos, each with a label, a Markdown description and links.
+- **Layer system**: any number of object layers plus the always-present fog, grid and map layers, each with visibility, player visibility and a lock.
+- **Live cursor**: broadcast your own pointer position to the table view.
+- **Two visual themes**: `obsidian` (adopts the colours and font of the active Obsidian theme) and `default` (a fixed dark look).
+- Automatic saving of fog, objects and the camera position after every change.
 
-Vollständige Bedienung: [Shortcuts](../../reference/shortcuts/).
+Full controls: [Shortcuts](../../reference/shortcuts/).
 
-## Editor- und Tischansicht
+## Editor and table view
 
-Dieselbe Engine läuft in zwei Modi: die volle Editor-Ansicht in Obsidian (`player`-Attribut aus) und die schreibgeschützte Tischansicht auf dem gemeinsamen Bildschirm (`player`-Attribut an). Im Tischmodus sind nur Zoom und Pan erlaubt, Fog wird immer vollständig deckend gerendert, und Video-Ton bleibt stets stummgeschaltet — der Ton kommt bewusst von der Spielleitung.
+The same engine runs in two modes: the full editor view inside Obsidian (`player` attribute off) and the read-only table view on the shared screen (`player` attribute on). In table mode only zoom and pan are allowed, fog is always rendered fully opaque, and video audio stays muted — the sound deliberately comes from the game master's side.
 
-## Standalone-Entwicklung
+## Standalone development
 
-Ohne Obsidian lässt sich die Engine direkt über [index.html](https://github.com/Chronicle-of-Whispers) und einen lokalen Webserver ausprobieren:
+Without Obsidian, the engine can be tried directly via [index.html](https://github.com/Chronicle-of-Whispers) and a local web server:
 
 ```sh
-python scripts/startServer.py   # oder scripts/startServer.bat unter Windows
+python scripts/startServer.py   # or scripts/startServer.bat on Windows
 ```
 
-Anschließend `http://localhost:8000` öffnen. Details zu Build, API und Tests: [Development / API](../../reference/development-api/).
+Then open `http://localhost:8000`. Build, API and test details: [Development / API](../../reference/development-api/).

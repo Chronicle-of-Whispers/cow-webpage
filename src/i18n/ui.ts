@@ -1,11 +1,11 @@
 import { sitePath } from '../utils/paths';
 
-export const LANGUAGES = ['de', 'en'] as const;
+export const LANGUAGES = ['en', 'de'] as const;
 export type Lang = (typeof LANGUAGES)[number];
 
-export const DEFAULT_LANG: Lang = 'de';
+export const DEFAULT_LANG: Lang = 'en';
 
-/** Build a site-absolute path for the given language ('de' lives at the root, 'en' under /en). */
+/** Build a site-absolute path for the given language ('en' lives at the root, 'de' under /de). */
 export function localePath(lang: Lang, path = '/') {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return sitePath(lang === DEFAULT_LANG ? normalized : `/${lang}${normalized}`);
@@ -64,6 +64,8 @@ export const ui = {
     'projects.next.status': 'Roadmap',
     'projectCard.more': 'Mehr erfahren',
     'projectCard.soon': 'In Vorbereitung',
+    'projectCard.download': 'Release herunterladen',
+    'projectCard.source': 'Quellcode',
 
     'showcase.eyebrow': 'Ein Fenster in deine Welt',
     'showcase.title': 'Entworfen, um der Geschichte nicht im Weg zu stehen.',
@@ -164,6 +166,8 @@ export const ui = {
     'projects.next.status': 'Roadmap',
     'projectCard.more': 'Learn more',
     'projectCard.soon': 'In preparation',
+    'projectCard.download': 'Download release',
+    'projectCard.source': 'Source code',
 
     'showcase.eyebrow': 'A window into your world',
     'showcase.title': "Designed to stay out of the story's way.",

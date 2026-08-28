@@ -1,51 +1,51 @@
 ---
 title: Settings
-description: Alle Einstellungen von Shadow Atlas im Überblick.
+description: Every Shadow Atlas setting at a glance.
 ---
 
-Alle Einstellungen befinden sich unter **Settings → Community plugins → Chronicle of Whispers - Shadow Atlas**.
+All settings live under **Settings → Community plugins → Chronicle of Whispers - Shadow Atlas**.
 
-## Allgemein
+## General
 
-| Einstellung | Beschreibung |
+| Setting | Description |
 | --- | --- |
-| Language | `Auto` (folgt der Obsidian-Anzeigesprache), `English (US)` oder `Deutsch (AT)`. Wirkt auf Plugin-Texte und die Spieler-Seite. |
-| Map viewer style | `Derive from Obsidian style` übernimmt Farben/Schrift aus dem aktiven Obsidian-Theme; `Default` verwendet das feste dunkle Erscheinungsbild der Engine. |
+| Language | `Auto` (follows your Obsidian display language), `English (US)` or `Deutsch (AT)`. Applies to plugin text and the table view. |
+| Map viewer style | `Derive from Obsidian style` adopts the colours and font of your active Obsidian theme; `Default` uses the engine's fixed dark look. |
 
 ## Server
 
-| Einstellung | Beschreibung |
+| Setting | Description |
 | --- | --- |
-| Port mode | `Fixed` (ein fester Port) oder `Range` (erster freier Port aus einem Bereich). |
-| Port *(bei Fixed)* | Fester TCP-Port, 1024–65535. Ist er belegt, bleibt Sharing deaktiviert. |
-| Port range start / end *(bei Range)* | Bereich, aus dem der erste freie Port gewählt wird. Standard: **8000–8099**. Ende muss ≥ Start sein. |
-| Allow access from other devices (LAN) | Standard **an**: Server bindet an `0.0.0.0`, Spieler im selben Netzwerk können verbinden. Aus: nur `127.0.0.1` (dieser Rechner). |
-| Apply changes → Restart server | Änderungen an Port/LAN-Einstellungen werden erst nach einem Neustart des lokalen Servers wirksam. |
+| Port mode | `Fixed` (a single port) or `Range` (first free port from a range). |
+| Port *(with Fixed)* | Fixed TCP port, 1024–65535. If it is taken, sharing stays disabled. |
+| Port range start / end *(with Range)* | Range the first free port is picked from. Default: **8000–8099**. The end must be ≥ the start. |
+| Allow access from other devices (LAN) | Default **on**: the server binds to `0.0.0.0`, so devices on the same network can connect. Off: `127.0.0.1` only (this machine). |
+| Apply changes → Restart server | Changes to the port/LAN settings only take effect after restarting the local server. |
 
 ## Map defaults
 
-| Einstellung | Beschreibung |
+| Setting | Description |
 | --- | --- |
-| Default live view | Startzustand von **Live View** für neu erstellte Karten. Standard: an. |
-| Map history length | Anzahl der Einträge im Karten-Verlauf des Share Docks. Standard 5, max. 100. |
-| Overlay history length | Anzahl der Einträge im Overlay-Verlauf des Share Docks. Standard 5, max. 100. |
-| Inline reading-mode share button | Zeigt beim Überfahren von Lesemodus-Inhalten einen kleinen Share-Button. Standard: an. |
+| Default live view | Starting state of **Live View** for newly created maps. Default: on. |
+| Map history length | Number of entries in the Share Dock's map history. Default 5, max. 100. |
+| Overlay history length | Number of entries in the Share Dock's overlay history. Default 5, max. 100. |
+| Inline reading-mode share button | Shows a small share button when hovering reading-mode content. Default: on. |
 
 ## Layer templates
 
-Legt fest, welche Objekt-Layer jede neue Karte automatisch erhält (Standard: ein Layer **Tokens**), sowie die Position der immer vorhandenen **Fog**-Ebene innerhalb dieses Stapels (0 = ganz vorne). Reihenfolge und Sichtbarkeit lassen sich per Pfeil-Buttons anpassen; die Fog-Ebene selbst ist unlöschbar und für Spieler immer sichtbar.
+Defines which object layers every new map is created with (default: a single **Tokens** layer), plus the position of the always-present **Fog** layer within that stack (0 = frontmost). Order and visibility can be adjusted with the arrow buttons; the fog layer itself cannot be deleted and is always visible to the table view.
 
 ## Pin icons
 
-Verwaltet die im Objekt-Eigenschaften-Panel verfügbaren Pin-Symbole:
+Manages the pin icons available in the object property panel:
 
-- 15 eingebaute Formen (Teardrop, Circle, Square, Diamond, Star, Chest, Exclamation, NPC, Cross, Xmark, Dot, X, Triangle, Heart, Hexagon).
-- Eigene Uploads per Drag & Drop: SVG, PNG, JPEG, WebP oder GIF, **maximal 512 KB**. Eingefärbte SVGs (mit `{{COLOR}}`-Platzhalter) können wie die eingebauten Formen eine Pin-Farbe annehmen.
-- Reihenfolge per Drag oder Pfeil-Buttons; **Restore default pins** setzt die Liste auf die 15 Standard-Formen zurück (eigene Uploads bleiben auf der Festplatte, verschwinden aber aus der Liste).
+- 15 built-in shapes (teardrop, circle, square, diamond, star, chest, exclamation, NPC, cross, xmark, dot, X, triangle, heart, hexagon).
+- Your own uploads via drag & drop: SVG, PNG, JPEG, WebP or GIF, **512 KB maximum**. Tintable SVGs (containing a `{{COLOR}}` placeholder) can take a pin colour just like the built-in shapes.
+- Reorder by dragging or with the arrow buttons; **Restore default pins** resets the list to the 15 default shapes (your uploads stay on disk but disappear from the list).
 
 ## Other
 
-| Einstellung | Beschreibung |
+| Setting | Description |
 | --- | --- |
-| Apply changes | Startet den lokalen Server neu, damit Port-/LAN-Änderungen greifen. |
-| Current address | Zeigt die Adresse, unter der Spieler aktuell verbinden (nur sichtbar, wenn der Server läuft). |
+| Apply changes | Restarts the local server so port/LAN changes take effect. |
+| Current address | Shows the address clients currently connect to (only visible while the server runs). |

@@ -1,32 +1,32 @@
 ---
 title: Installation
-description: Shadow Atlas manuell aus einem Release installieren.
+description: Install Shadow Atlas manually from a release.
 ---
 
-Shadow Atlas durchläuft aktuell noch den Review-Prozess für den Obsidian Community-Plugin-Store. Bis dahin wird das Plugin manuell aus einem GitHub Release installiert.
+Shadow Atlas is still going through the review process for the Obsidian community plugin store. Until then, the plugin is installed manually from a GitHub release.
 
-## Voraussetzungen
+## Requirements
 
-- Obsidian **1.8.7** oder neuer.
-- **Desktop** Obsidian (Windows, macOS, Linux) — das Plugin startet einen lokalen Node-Server und läuft nicht auf Obsidian Mobile.
-- Ein Bildschirm für den Spieltisch: Tisch-TV, Beamer, zweiter Monitor oder die Tablets der Mitspielenden — jeweils mit einem modernen Browser im selben lokalen Netzwerk. Ein zweiter Monitor am selben Rechner kommt auch ohne Netzwerk aus (`http://localhost:<port>`).
-- Für die Entwicklung aus dem Quellcode zusätzlich Node.js 18 oder neuer und Git.
+- Obsidian **1.8.7** or newer.
+- **Desktop** Obsidian (Windows, macOS, Linux) — the plugin starts a local Node server and does not run on Obsidian Mobile.
+- A screen for the game table: a table TV, a projector, a second monitor or your players' tablets — each with a modern browser on the same local network. A second monitor on the same machine works without a network too (`http://localhost:<port>`).
+- For building from source: Node.js 18 or newer and Git.
 
-## Installation aus einem Release
+## Installing from a release
 
-1. Öffne die [Repositories auf GitHub](https://github.com/Chronicle-of-Whispers).
-2. Lade das Release-Archiv des Plugins herunter.
-3. Entpacke es nach `<Vault>/.obsidian/plugins/cow-shadow-atlas/`. Das Archiv enthält `main.js`, `manifest.json`, `styles.css`, den `locales/`-Ordner und den `www/`-Ordner mit der Spieler-Seite.
-4. In Obsidian unter **Settings → Community plugins** die Option **Restricted mode** deaktivieren (falls aktiv) und **Chronicle of Whispers - Shadow Atlas** aktivieren.
+1. Open the [repositories on GitHub](https://github.com/Chronicle-of-Whispers).
+2. Download the plugin's release archive.
+3. Extract it into `<Vault>/.obsidian/plugins/cow-shadow-atlas/`. The archive contains `main.js`, `manifest.json`, `styles.css`, the `locales/` folder and the `www/` folder with the table view.
+4. In Obsidian, go to **Settings → Community plugins**, turn off **Restricted mode** if it is on, and enable **Chronicle of Whispers - Shadow Atlas**.
 
 ## Firewall
 
-Damit Geräte im LAN — Tisch-TV, Tablets, ein zweiter Rechner — verbinden können, muss eingehender Traffic auf dem gewählten Port (Standard-Bereich `8000`–`8099`, siehe [Server](./guides/server/)) für Obsidian erlaubt sein. Für einen zweiten Monitor am selben Rechner ist das nicht nötig.
+For devices on your LAN — a table TV, tablets, another computer — to connect, inbound traffic on the chosen port (default range `8000`–`8099`, see [Server](./guides/server/)) must be allowed for Obsidian. A second monitor on the same machine does not need this.
 
-## Aus dem Quellcode
+## From source
 
-Das Plugin bündelt die [Map-Viewer-Engine](./projects/map-viewer/) aus einem Geschwisterordner. Details zu Build, Ordnerstruktur und dem `MAPVIEWER_SRC`-Override stehen unter [Development / API](./reference/development-api/).
+The plugin bundles the [Map Viewer engine](./projects/map-viewer/) from a sibling folder. Build instructions, folder layout and the `MAPVIEWER_SRC` override are documented under [Development / API](./reference/development-api/).
 
-## Nächster Schritt
+## Next step
 
-Lege anschließend mit [Getting Started](./getting-started/) deine erste Karte an.
+Continue with [Getting started](./getting-started/) to create your first map.

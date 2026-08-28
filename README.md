@@ -2,87 +2,86 @@
 
 Live: **<https://chronicle-of-whispers.github.io/cow-webpage/>**
 
-Statische Projektwebsite und zentrale Dokumentation für **Chronicle of Whispers (COW)**. Die Startseite ist eine eigene Astro-Produktseite; die Dokumentation wird mit Starlight aus Markdown-Dateien erzeugt.
+Static project website and central documentation for **Chronicle of Whispers (COW)**. The landing page is a standalone Astro page; the documentation is generated with Starlight from Markdown files.
 
 ## Stack
 
 - Astro
 - Starlight
-- statischer Build ohne Server-Adapter
+- static build, no server adapter
 - GitHub Pages
 - GitHub Actions
 
-## Lokal starten
+## Run locally
 
-Voraussetzung ist Node.js 22.12 oder neuer. Empfohlen wird Node.js 24 LTS, dieselbe Hauptversion wie im Deployment-Workflow.
+Requires Node.js 22.12 or newer. Node.js 24 LTS is recommended — the same major version the deployment workflow uses.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Astro zeigt die lokale URL anschließend im Terminal an (standardmäßig `http://localhost:4321`).
+Astro then prints the local URL in the terminal (`http://localhost:4321` by default).
 
-## Produktions-Build
+## Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-Der statische Build wird in `dist/` geschrieben.
+The static build is written to `dist/`.
 
-## Inhalte bearbeiten
+## Editing content
 
-- Landingpage (beide Sprachen): `src/components/LandingPage.astro`
-- Sprachvarianten der Landingpage: `src/pages/index.astro` (DE) und `src/pages/en/index.astro` (EN)
-- UI-Texte der Landingpage und des Layouts: `src/i18n/ui.ts`
-- wiederverwendbare UI: `src/components/`
-- Landingpage-CSS: `src/styles/global.css`
-- Dokumentation DE: `src/content/docs/docs/`
-- Dokumentation EN: `src/content/docs/en/docs/`
-- Starlight-Design: `src/styles/starlight.css`
-- austauschbare Logos: `public/logo/` und `src/assets/logo-mark.svg`
-- austauschbare Screenshots: `public/screenshots/`
-- Navigation und Seitenkonfiguration: `astro.config.mjs`
+- landing page (both languages): `src/components/LandingPage.astro`
+- language variants of the landing page: `src/pages/index.astro` (EN) and `src/pages/de/index.astro` (DE)
+- UI strings of the landing page and layout: `src/i18n/ui.ts`
+- reusable UI: `src/components/`
+- landing page CSS: `src/styles/global.css`
+- documentation EN: `src/content/docs/docs/`
+- documentation DE: `src/content/docs/de/docs/`
+- Starlight theme: `src/styles/starlight.css`
+- replaceable logos: `public/logo/` and `src/assets/logo-mark.svg`
+- replaceable screenshots: `public/screenshots/`
+- navigation and site configuration: `astro.config.mjs`
 
-## Sprachen
+## Languages
 
-Die Website ist vollständig zweisprachig. Deutsch ist die Standardsprache und liegt
-im Wurzelpfad (`/`, `/docs/…`), Englisch unter `/en/` (`/en/`, `/en/docs/…`).
+The site is fully bilingual. English is the default language and lives at the root
+path (`/`, `/docs/…`), German lives under `/de/` (`/de/`, `/de/docs/…`).
 
-Eine neue Doku-Seite braucht daher immer zwei Dateien — `src/content/docs/docs/<pfad>.md`
-und `src/content/docs/en/docs/<pfad>.md` — sowie einen Sidebar-Eintrag in
-`astro.config.mjs`. Dort wird der `slug` ohne Sprachpräfix angegeben; Starlight
-löst ihn pro Sprache selbst auf. Das Label wird über `translations: { en: '…' }`
-übersetzt.
+A new documentation page therefore always needs two files — `src/content/docs/docs/<path>.md`
+and `src/content/docs/de/docs/<path>.md` — plus a sidebar entry in `astro.config.mjs`.
+The `slug` there is given without a language prefix; Starlight resolves it per
+language. Labels are translated via `translations: { de: '…' }`.
 
-Neue Texte auf der Landingpage gehören in `src/i18n/ui.ts` und müssen dort in
-beiden Sprachen gepflegt werden — fehlt ein Schlüssel, schlägt der Typecheck fehl.
+New landing page strings belong in `src/i18n/ui.ts` and must be maintained in both
+languages there — a missing key fails the type check.
 
-GitHub-Organisation: [Chronicle-of-Whispers](https://github.com/Chronicle-of-Whispers). Kontakt: `chronicleofwhispers@outlook.com`.
+GitHub organisation: [Chronicle-of-Whispers](https://github.com/Chronicle-of-Whispers). Contact: `chronicleofwhispers@outlook.com`.
 
 ## GitHub Pages
 
-Der Workflow `.github/workflows/deploy.yml` baut und veröffentlicht die Seite bei jedem Push auf `main`. Im GitHub-Repository muss unter **Settings → Pages → Source** einmalig **GitHub Actions** ausgewählt werden.
+The workflow `.github/workflows/deploy.yml` builds and publishes the site on every push to `main`. In the GitHub repository, **Settings → Pages → Source** has to be set to **GitHub Actions** once.
 
-Der Workflow erkennt den Hosting-Typ automatisch:
+The workflow detects the hosting type automatically:
 
-- `chronicle-of-whispers.github.io`: Veröffentlichung unter `/`
-- normales Repository: Veröffentlichung unter `/<repository-name>/`
+- `chronicle-of-whispers.github.io`: published at `/`
+- regular repository: published at `/<repository-name>/`
 
-Dadurch funktionieren interne Links und öffentliche Assets in beiden Varianten.
+That way internal links and public assets work in both variants.
 
-### Eigene Domain
+### Custom domain
 
-1. DNS-Einträge wie in der GitHub-Pages-Dokumentation beschrieben konfigurieren.
-2. Im Repository eine Actions-Variable `SITE_URL` mit der vollständigen URL setzen, zum Beispiel `https://docs.example.com`.
-3. Optional `BASE_PATH` auf `/` setzen.
-4. Eine Datei `public/CNAME` mit genau dem Domainnamen anlegen.
+1. Configure the DNS records as described in the GitHub Pages documentation.
+2. Set an Actions variable `SITE_URL` in the repository to the full URL, for example `https://docs.example.com`.
+3. Optionally set `BASE_PATH` to `/`.
+4. Add a file `public/CNAME` containing exactly the domain name.
 
-`public/CNAME` ist absichtlich noch nicht enthalten, damit kein Platzhalter-Domainname ein späteres Deployment stört.
+`public/CNAME` is intentionally not included yet so that no placeholder domain breaks a later deployment.
 
-## Projektstruktur
+## Project structure
 
 ```text
 .
@@ -102,6 +101,6 @@ Dadurch funktionieren interne Links und öffentliche Assets in beiden Varianten.
 └── README.md
 ```
 
-## Lizenz
+## License
 
-Vor der Veröffentlichung muss die endgültige Open-Source-Lizenz ausgewählt und als `LICENSE` hinzugefügt werden. Die Website trifft diese rechtliche Entscheidung bewusst nicht vorab.
+Before publishing, the final open-source license has to be chosen and added as `LICENSE`. The website deliberately does not make that legal decision in advance.

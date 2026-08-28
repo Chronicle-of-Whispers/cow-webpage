@@ -1,29 +1,29 @@
 ---
-title: Getting Started
-description: Die erste Battle Map mit Shadow Atlas anlegen.
+title: Getting started
+description: Create your first battle map with Shadow Atlas.
 ---
 
-## 1. Karte anlegen
+## 1. Create a map
 
-Rechtsklick auf einen Ordner im Vault → **[CoW] - New shadow atlas map**. Die neue `.samap`-Datei öffnet sich automatisch in der Kartenansicht.
+Right-click a folder in your vault → **[CoW] - New shadow atlas map**. The new `.samap` file opens in the map view automatically.
 
-## 2. Basisbild setzen
+## 2. Set the base image
 
-Ein Bild oder Video per Drag & Drop auf die leere Karte ziehen, um es als Kartenhintergrund zu übernehmen.
+Drag an image or video onto the empty map to use it as the map background.
 
-## 3. Fog malen
+## 3. Paint fog
 
-**Shift** gedrückt halten, um in den Fog-Modus zu wechseln: linke Maustaste entfernt Fog, rechte Maustaste fügt welchen hinzu. Details und Werkzeuge: [Fog of War](./guides/fog-of-war/).
+Hold **Shift** to enter fog mode: the left mouse button removes fog, the right mouse button adds it. Tools and details: [Fog of war](./guides/fog-of-war/).
 
-## 4. Objekte platzieren
+## 4. Place objects
 
-Rechtsklick auf die Karte → **Add Object** → Pin, Bild oder Video. Über das Eigenschaften-Panel eines Objekts lässt sich ein **Popover-Link** (zu einer Notiz oder Überschrift, angezeigt beim Überfahren des Objekts) oder ein **Obsidian-Link** (zu einer beliebigen Vault-Datei, z. B. einer weiteren Karte) setzen.
+Right-click the map → **Add Object** → pin, image or video. In an object's property panel you can set a **popover link** (to a note or heading, shown when hovering the object) or an **Obsidian link** (to any vault file, e.g. another map).
 
-## 5. Auf den Tischbildschirm bringen
+## 5. Put it on the table screen
 
-Kopfleiste → **Share with players**. Öffne die Adresse aus der Pille unten links (z. B. `http://192.168.0.10:8000`) im Browser des Geräts am Spieltisch — Tisch-TV, zweiter Monitor oder Tablet — und schalte ihn auf Vollbild. Mit **Live View** werden weitere Änderungen automatisch übertragen. Details: [Sharing](./guides/sharing/).
+Header action → **Share with players**. Open the address from the pill in the bottom-left corner (e.g. `http://192.168.0.10:8000`) in the browser of the device at your game table — table TV, second monitor or tablet — and switch it to full screen. With **Live View** enabled, further changes are pushed automatically. Details: [Sharing](./guides/sharing/).
 
-## Wie geht es weiter?
+## Where to go next
 
 - [Shadow Atlas](./projects/shadow-atlas/)
 - [Sharing](./guides/sharing/)

@@ -1,40 +1,40 @@
 ---
 title: FAQ
-description: Häufige Fragen zu Chronicle of Whispers.
+description: Frequently asked questions about Chronicle of Whispers.
 ---
 
-## Ist Shadow Atlas bereits veröffentlicht?
+## Is Shadow Atlas released yet?
 
-Die aktuelle Version ist **1.0.0**. Ein Review durch den Obsidian Community-Plugin-Store steht noch aus, daher erfolgt die Installation vorerst manuell aus einem [GitHub Release](https://github.com/Chronicle-of-Whispers) (siehe [Installation](./installation/)).
+The current version is **1.0.0**. A review by the Obsidian community plugin store is still pending, so installation happens manually from a [GitHub release](https://github.com/Chronicle-of-Whispers) for now (see [Installation](./installation/)).
 
-## Ist die Nutzung kostenlos?
+## Is it free to use?
 
-Ja. Shadow Atlas und der Map Viewer sind unter der [GPL-3.0-or-later](https://github.com/Chronicle-of-Whispers)-Lizenz quelloffen.
+Yes. Shadow Atlas and Map Viewer are open source under the [GPL-3.0-or-later](https://github.com/Chronicle-of-Whispers) licence.
 
-## Benötige ich Obsidian?
+## Do I need Obsidian?
 
-Für Shadow Atlas ja — und zwar die **Desktop**-Version (der lokale Server läuft nicht auf Obsidian Mobile). Der Bildschirm am Spieltisch braucht kein Obsidian, nur einen modernen Browser im selben Netzwerk.
+For Shadow Atlas, yes — and specifically the **desktop** version (the local server does not run on Obsidian Mobile). The screen at your game table does not need Obsidian, only a modern browser on the same network.
 
-## Brauche ich zwingend einen zweiten Bildschirm?
+## Do I really need a second screen?
 
-Shadow Atlas ist für genau dieses Szenario gebaut: Spielleitung in Obsidian, Gruppe am gemeinsamen Bildschirm. Technisch geht es auch ohne — ein Fenster mit `http://localhost:<port>` auf demselben Rechner reicht —, aber der Mehrwert (Fog of War, Layer nur für die Spielleitung) entfaltet sich erst mit einer getrennten Ansicht.
+Shadow Atlas is built exactly for that scenario: the game master in Obsidian, the party on a shared screen. Technically it also works without one — a window pointing at `http://localhost:<port>` on the same machine is enough — but the benefit (fog of war, layers only the game master can see) really shows once the views are separate.
 
-## Werden Kampagnendaten in eine Cloud geladen?
+## Is campaign data uploaded to a cloud?
 
-Nein. Jede Karte bleibt als `.samap`-Datei im Vault, ihre Ressourcen liegen daneben in `.cow-shadow-atlas/<id>/`. Der lokale Server läuft ausschließlich im eigenen Netzwerk; die Dokumentationswebsite selbst ist vollständig statisch und überträgt keine Kampagnendaten.
+No. Every map stays a `.samap` file in your vault, with its resources next to it in `.cow-shadow-atlas/<id>/`. The local server only runs on your own network; the documentation website itself is fully static and transmits no campaign data.
 
-## Ist der Server sicher genug fürs Internet?
+## Is the server safe to expose to the internet?
 
-Nein. Der lokale Server bietet keine Authentifizierung oder Verschlüsselung. Aktiviere LAN-Zugriff nur in einem vertrauenswürdigen Netzwerk und öffne den Port niemals zum Internet. Details: [Server](./guides/server/).
+No. The local server offers no authentication or encryption. Only enable LAN access on a trusted network and never expose the port to the internet. Details: [Server](./guides/server/).
 
-## Funktioniert die Website ohne JavaScript?
+## Does the website work without JavaScript?
 
-Die Projektseite wird mit Astro statisch erzeugt und nutzt kein eigenes Client-JavaScript. Starlight kann für Komfortfunktionen wie Suche und Navigation kleine clientseitige Skripte ausliefern; die Dokumentationsinhalte werden statisch gerendert.
+The project site is generated statically with Astro and ships no client JavaScript of its own. Starlight may deliver small client-side scripts for convenience features such as search and navigation; the documentation content is rendered statically.
 
-## Wie kann ich helfen?
+## How can I help?
 
-Issues, Roadmap und Beitragshinweise finden sich in den jeweiligen Repositories unter [github.com/Chronicle-of-Whispers](https://github.com/Chronicle-of-Whispers). Der geplante Ablauf ist auf der [Development-/API-Seite](./reference/development-api/) beschrieben.
+Issues, roadmap and contribution notes live in the respective repositories under [github.com/Chronicle-of-Whispers](https://github.com/Chronicle-of-Whispers). The intended workflow is described on the [Development / API page](./reference/development-api/).
 
-## Wo melde ich Fehler?
+## Where do I report bugs?
 
-Über das Issue-Tracking im zuständigen GitHub-Repository unter [Chronicle-of-Whispers](https://github.com/Chronicle-of-Whispers). Für allgemeine Anfragen: [chronicleofwhispers@outlook.com](mailto:chronicleofwhispers@outlook.com).
+Through the issue tracker of the relevant GitHub repository under [Chronicle-of-Whispers](https://github.com/Chronicle-of-Whispers). For general enquiries: [chronicleofwhispers@outlook.com](mailto:chronicleofwhispers@outlook.com).

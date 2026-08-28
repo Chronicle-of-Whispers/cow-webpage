@@ -1,29 +1,29 @@
 ---
-title: Fog of War
-description: Verdeckte Kartenbereiche malen, freigeben und für Spieler steuern.
+title: Fog of war
+description: Paint, reveal and control hidden map areas for your table.
 ---
 
-Fog of War trennt die vollständige Ansicht der Spielleitung von dem Ausschnitt, den die Gruppe bereits entdeckt hat. Auf der Spieler-Seite wird Fog immer vollständig deckend gerendert — die im Editor eingestellte Deckkraft betrifft nur die eigene Ansicht.
+Fog of war separates the game master's complete view from the part the party has already discovered. On the table view fog is always rendered fully opaque — the opacity you set in the editor only affects your own view.
 
-## Bedienung
+## Controls
 
-1. **Shift** gedrückt halten, während der Zeiger über der Karte ist, um den Fog-Modus zu betreten (`Esc` verlässt ihn wieder).
-2. **Linke Maustaste** entfernt Fog, **rechte Maustaste** fügt Fog hinzu.
-3. **Mausrad** ändert die Werkzeuggröße (beim Polygon-Werkzeug zoomt das Rad stattdessen weiter).
-4. In der Toolbar unter **Fog Tool** zwischen **Circle**, **Square**, **Rectangle** und **Polygon** wählen.
+1. Hold **Shift** while the pointer is over the map to enter fog mode (`Esc` leaves it again).
+2. The **left mouse button** removes fog, the **right mouse button** adds it.
+3. The **mouse wheel** changes the tool size (with the polygon tool the wheel keeps zooming instead).
+4. Pick between **Circle**, **Square**, **Rectangle** and **Polygon** in the toolbar under **Fog Tool**.
 
-Circle und Square malen direkt während des Ziehens; das Rechteck wird aufgezogen und erst beim Loslassen gefüllt. Beim Polygon-Werkzeug setzt jeder Klick einen Eckpunkt — ein Klick auf den grünen Haken am letzten Punkt füllt die Fläche, `Esc` bricht ab.
+Circle and square paint while you drag; the rectangle is dragged out and filled on release. With the polygon tool every click places a vertex — clicking the green check mark at the last vertex fills the area, `Esc` cancels.
 
-Über **Fog** → **Clear All** lässt sich der gesamte Fog auf einen Schlag entfernen, über **Restore All** die ganze Karte wieder verdecken.
+**Fog** → **Clear All** removes all fog at once, **Restore All** covers the whole map again.
 
-## Fog-Ebene
+## The fog layer
 
-Fog ist immer vorhanden und kann in den [Layer-Templates](../../reference/settings/#layer-templates) an beliebiger Stelle im Stapel platziert werden — vor oder hinter beliebig vielen Objekt-Layern. Deckkraft und Sichtbarkeit der eigenen Ansicht lassen sich im Eigenschaften-Panel der Fog-Ebene einstellen.
+Fog is always present and can be placed anywhere in the stack via the [layer templates](../../reference/settings/#layer-templates) — in front of or behind any number of object layers. Opacity and visibility of your own view are set in the fog layer's property panel.
 
-:::danger[Keine Sicherheitsgrenze]
-Fog of War ist eine Präsentationsfunktion, kein Zugriffsschutz. Die Spieler-Seite und der lokale Server verwenden keine Authentifizierung — jeder mit Netzwerkzugriff auf den freigegebenen Port kann sich verbinden. Öffne den Server nicht zum Internet und teile das Netzwerk nur mit Personen, die auch den vollständigen Karteninhalt sehen dürfen.
+:::danger[Not a security boundary]
+Fog of war is a presentation feature, not access control. The table view and the local server use no authentication — anyone with network access to the exposed port can connect. Do not expose the server to the internet, and only share the network with people who are also allowed to see the full map content.
 :::
 
 ## Synchronisation
 
-Ist [Live View](../sharing/#live-view) aktiv, sehen Spieler jede Fog-Änderung sofort. Ist es deaktiviert, wird der aktuelle Stand erst beim nächsten manuellen **Share with players** übertragen.
+With [Live View](../sharing/#live-view) enabled, the table view sees every fog change instantly. With it disabled, the current state is only transmitted on the next manual **Share with players**.

@@ -12,7 +12,7 @@ export default defineConfig({
     starlight({
       title: 'Chronicle of Whispers',
       description:
-        'Battle Maps aus dem Obsidian-Vault auf den Spieltisch-Bildschirm: Fog of War, Pins, Bilder und Videos, live an TV, zweiten Monitor oder Tablets im lokalen Netzwerk.',
+        'Battle maps from your Obsidian vault onto the screen at your game table: fog of war, pins, images and videos, live on a TV, a second monitor or tablets on your local network.',
       logo: {
         src: './src/assets/logo-mark.svg',
         alt: 'Chronicle of Whispers',
@@ -21,8 +21,8 @@ export default defineConfig({
       disable404Route: true,
       defaultLocale: 'root',
       locales: {
-        root: { label: 'Deutsch', lang: 'de' },
-        en: { label: 'English', lang: 'en' },
+        root: { label: 'English', lang: 'en' },
+        de: { label: 'Deutsch', lang: 'de' },
       },
       social: [
         {
@@ -38,82 +38,82 @@ export default defineConfig({
       customCss: ['./src/styles/starlight.css'],
       sidebar: [
         {
-          label: 'Zur Projektseite',
-          translations: { en: 'Back to the project site' },
+          label: 'Back to the project site',
+          translations: { de: 'Zur Projektseite' },
           link: '/',
         },
         {
-          label: 'Einstieg',
-          translations: { en: 'Start here' },
+          label: 'Start here',
+          translations: { de: 'Einstieg' },
           items: [
             {
-              label: 'Übersicht',
-              translations: { en: 'Overview' },
+              label: 'Overview',
+              translations: { de: 'Übersicht' },
               slug: 'docs',
             },
             {
               label: 'Installation',
-              translations: { en: 'Installation' },
+              translations: { de: 'Installation' },
               slug: 'docs/installation',
             },
             {
-              label: 'Getting Started',
-              translations: { en: 'Getting started' },
+              label: 'Getting started',
+              translations: { de: 'Getting Started' },
               slug: 'docs/getting-started',
             },
           ],
         },
         {
-          label: 'Projekte',
-          translations: { en: 'Projects' },
+          label: 'Projects',
+          translations: { de: 'Projekte' },
           items: [
             { label: 'Shadow Atlas', slug: 'docs/projects/shadow-atlas' },
             { label: 'Map Viewer', slug: 'docs/projects/map-viewer' },
           ],
         },
         {
-          label: 'Betrieb & Spielleitung',
-          translations: { en: 'Running a session' },
+          label: 'Running a session',
+          translations: { de: 'Betrieb & Spielleitung' },
           items: [
             {
               label: 'Server',
-              translations: { en: 'Server' },
+              translations: { de: 'Server' },
               slug: 'docs/guides/server',
             },
             {
               label: 'Sharing',
-              translations: { en: 'Sharing' },
+              translations: { de: 'Sharing' },
               slug: 'docs/guides/sharing',
             },
             {
-              label: 'Fog of War',
-              translations: { en: 'Fog of war' },
+              label: 'Fog of war',
+              translations: { de: 'Fog of War' },
               slug: 'docs/guides/fog-of-war',
             },
           ],
         },
         {
-          label: 'Referenz',
-          translations: { en: 'Reference' },
+          label: 'Reference',
+          translations: { de: 'Referenz' },
           items: [
             {
               label: 'Settings',
-              translations: { en: 'Settings' },
+              translations: { de: 'Settings' },
               slug: 'docs/reference/settings',
             },
             {
               label: 'Shortcuts',
-              translations: { en: 'Shortcuts' },
+              translations: { de: 'Shortcuts' },
               slug: 'docs/reference/shortcuts',
             },
             {
               label: 'Development / API',
-              translations: { en: 'Development / API' },
+              translations: { de: 'Development / API' },
               slug: 'docs/reference/development-api',
             },
             {
               label: 'FAQ',
-              translations: { en: 'FAQ' },
+              translations: { de: 'FAQ' },
               slug: 'docs/faq',
             },
           ],

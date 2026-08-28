@@ -1,60 +1,60 @@
 ---
 title: Development / API
-description: Build, Ordnerstruktur und die <map-viewer>-API von Chronicle of Whispers.
+description: Build, folder layout and the <map-viewer> API of Chronicle of Whispers.
 ---
 
-Shadow Atlas besteht aus zwei Projekten in einem gemeinsamen Workspace:
+Shadow Atlas consists of two projects in one shared workspace:
 
-| Projekt | Rolle | Build |
+| Project | Role | Build |
 | --- | --- | --- |
-| **cow-shadow-atlas-viewer** | Vanilla-JS/Three.js-Kartenengine, liefert das `<map-viewer>`-Custom-Element. | Kein eigener Build — wird als Quelltext eingebunden. |
-| **cow-shadow-atlas** | TypeScript-Obsidian-Plugin, bündelt die Engine per esbuild und ergänzt den lokalen Share-Server. | esbuild |
+| **cow-shadow-atlas-viewer** | Vanilla-JS/Three.js map engine providing the `<map-viewer>` custom element. | None — consumed as source. |
+| **cow-shadow-atlas** | TypeScript Obsidian plugin, bundles the engine with esbuild and adds the local share server. | esbuild |
 
-Das Plugin erwartet die Engine standardmäßig als Geschwisterordner (`../cow-shadow-atlas-viewer`, relativ zum Plugin-Ordner); überschreibbar über die Umgebungsvariable `MAPVIEWER_SRC`.
+By default the plugin expects the engine as a sibling folder (`../cow-shadow-atlas-viewer`, relative to the plugin folder); override it with the `MAPVIEWER_SRC` environment variable.
 
-## Plugin bauen
+## Building the plugin
 
 ```bash
 npm install
 npm run build
 ```
 
-Das Script prüft zuerst die Typen (`tsc -noEmit -skipLibCheck`) und bündelt anschließend mit esbuild. Ergebnis: `main.js` (CommonJS, Obsidian-Plugin) und `www/mapviewer.bundle.js` (ESM, eigenständige Spieler-Seite).
+The script first type-checks (`tsc -noEmit -skipLibCheck`) and then bundles with esbuild. Output: `main.js` (CommonJS, the Obsidian plugin) and `www/mapviewer.bundle.js` (ESM, the standalone table view page).
 
-Alternativ lässt sich der Bundle-Schritt ohne Typprüfung direkt aufrufen, etwa über die Wrapper-Scripts `scripts/build.ps1` / `scripts/build.sh`:
+The bundle step can also be invoked without the type check, e.g. through the wrapper scripts `scripts/build.ps1` / `scripts/build.sh`:
 
 ```bash
 node esbuild.config.mjs production
 ```
 
-Watch-Modus (kein Minify, Inline-Sourcemaps):
+Watch mode (no minification, inline source maps):
 
 ```bash
 node esbuild.config.mjs
 ```
 
-## `<map-viewer>` Custom Element
+## `<map-viewer>` custom element
 
-Definiert in `src/map-viewer-element.js` der Engine.
+Defined in the engine's `src/map-viewer-element.js`.
 
-**Attribute:** `src`, `storage-key`, `lang`, `player`, `media-type`, `logs`, `theme`.
+**Attributes:** `src`, `storage-key`, `lang`, `player`, `media-type`, `logs`, `theme`.
 
-**Public API:** `setStorageAdapter(adapter)`, `setLinkProvider(provider)`, `setPinShapes(defs)`, `loadMap(url)`, `save()` / `load()`, `getData()` / `setData(data)`, `addImage(x, y, opts)`, `showToast(text, opts)`, `engine` (direkter Zugriff auf die `MapViewer`-Instanz).
+**Public API:** `setStorageAdapter(adapter)`, `setLinkProvider(provider)`, `setPinShapes(defs)`, `loadMap(url)`, `save()` / `load()`, `getData()` / `setData(data)`, `addImage(x, y, opts)`, `showToast(text, opts)`, `engine` (direct access to the `MapViewer` instance).
 
 **Events:** `map-ready`, `map-changed`, `map-saved`, `map-loaded`, `view-changed`, `object-transform`, `video-state`, `livecursor-change`, `livecursor-move`, `map-image-change`, `map-perf`.
 
-## Datenlayout
+## Data layout
 
-Jede `.samap`-Datei ist lesbares JSON mit einer eindeutigen `id`. Ihre Ressourcen liegen daneben unter `.cow-shadow-atlas/<id>/`:
+Every `.samap` file is readable JSON with a unique `id`. Its resources sit next to it under `.cow-shadow-atlas/<id>/`:
 
 ```text
 .cow-shadow-atlas/<id>/
-├── objects.json   # Objekt-Layer-Graph (Pins, Bilder, Videos, Layer-Definitionen)
-├── fog.bin        # Fog-Maske
-└── <basisbild>    # das gesetzte Kartenbild/-video
+├── objects.json   # object layer graph (pins, images, videos, layer definitions)
+├── fog.bin        # fog mask
+└── <base image>   # the configured map image/video
 ```
 
-## Engine-Tests
+## Engine tests
 
 ```bash
 cd tests
@@ -63,11 +63,11 @@ npm test        # node --test
 npm run lint     # eslint src tests
 ```
 
-## Beiträge
+## Contributing
 
-1. Prüfe bestehende Issues im jeweiligen Repository unter [Chronicle-of-Whispers](https://github.com/Chronicle-of-Whispers).
-2. Halte Änderungen klein und thematisch fokussiert.
-3. Dokumentiere sichtbares Verhalten und neue Konfiguration.
-4. Ergänze Tests, wenn das jeweilige Repository ein Testgerüst bereitstellt.
+1. Check the existing issues in the relevant repository under [Chronicle-of-Whispers](https://github.com/Chronicle-of-Whispers).
+2. Keep changes small and focused on one topic.
+3. Document visible behaviour and new configuration.
+4. Add tests where the repository provides a test harness.
 
-Neue Doku-Seiten werden als Markdown unter `src/content/docs/docs/` angelegt und in `astro.config.mjs` in die Sidebar aufgenommen.
+New documentation pages are added as Markdown under `src/content/docs/docs/` (English) and `src/content/docs/de/docs/` (German), then registered in the sidebar in `astro.config.mjs`.

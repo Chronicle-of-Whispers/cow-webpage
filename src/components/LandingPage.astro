@@ -31,6 +31,8 @@ const t = useTranslations(lang);
           name={t('projects.shadowAtlas.name')}
           description={t('projects.shadowAtlas.description')}
           href={localePath(lang, '/docs/projects/shadow-atlas/')}
+          actionHref="https://github.com/Chronicle-of-Whispers/cow-shadow-atlas/releases/latest"
+          actionLabel={t('projectCard.download')}
           status={t('projects.shadowAtlas.status')}
           icon="atlas"
         />
@@ -40,6 +42,8 @@ const t = useTranslations(lang);
           name={t('projects.mapViewer.name')}
           description={t('projects.mapViewer.description')}
           href={localePath(lang, '/docs/projects/map-viewer/')}
+          actionHref="https://github.com/Chronicle-of-Whispers/cow-shadow-atlas-viewer"
+          actionLabel={t('projectCard.source')}
           status={t('projects.mapViewer.status')}
           tone="blue"
           icon="map"

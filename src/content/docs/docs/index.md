@@ -1,33 +1,33 @@
 ---
-title: Übersicht
-description: Einstieg in Chronicle of Whispers und seine Projekte.
+title: Overview
+description: Getting started with Chronicle of Whispers and its projects.
 ---
 
-Chronicle of Whispers (COW) ist eine wachsende Sammlung quelloffener Werkzeuge für Pen-&-Paper- und Tabletop-Kampagnen. Der Fokus liegt auf dem **Spieltisch mit Bildschirm**: Karten und Kampagnenwissen leben in Obsidian, die Gruppe sieht sie live auf einem gemeinsamen Bildschirm.
+Chronicle of Whispers (COW) is a growing collection of open-source tools for pen-and-paper and tabletop campaigns. The focus is the **game table with a screen**: maps and campaign knowledge live in Obsidian, while the party sees them live on a shared display.
 
-## Projekte
+## Projects
 
 ### Shadow Atlas
 
-Ein Obsidian-Plugin, das Battle Maps direkt im Vault öffnet und sie auf den Bildschirm am Spieltisch bringt: Fog of War, Pins, Bilder und Videos, live im lokalen Netzwerk.
+An Obsidian plugin that opens battle maps straight from your vault and puts them on the screen at your game table: fog of war, pins, images and videos, live across your local network.
 
-[Shadow Atlas kennenlernen](./projects/shadow-atlas/)
+[Learn about Shadow Atlas](./projects/shadow-atlas/)
 
 ### Map Viewer
 
-Die Three.js-Engine hinter Shadow Atlas — sie liefert sowohl die Editor-Ansicht der Spielleitung als auch die schreibgeschützte Tischansicht.
+The Three.js engine behind Shadow Atlas — it powers both the game master's editor view and the read-only table view.
 
-[Map Viewer kennenlernen](./projects/map-viewer/)
+[Learn about Map Viewer](./projects/map-viewer/)
 
-## Der schnellste Einstieg
+## The quickest start
 
-1. Lies die [Installationshinweise](./installation/).
-2. Richte anhand von [Getting Started](./getting-started/) deine erste Karte ein.
-3. Prüfe für das Teilen mit Spielern die Hinweise zu [Server](./guides/server/) und [Sharing](./guides/sharing/).
+1. Read the [installation notes](./installation/).
+2. Set up your first map with [Getting started](./getting-started/).
+3. For sharing with your table, check [Server](./guides/server/) and [Sharing](./guides/sharing/).
 
-## Grundsätze
+## Principles
 
-- **Local-first:** Kampagnendaten bleiben als `.samap`-Dateien lokal im Vault.
-- **Open Source:** Code und Lizenz ([GPL-3.0-or-later](https://github.com/Chronicle-of-Whispers)) sind offen einsehbar.
-- **Für den Spieltisch:** die Tischansicht läuft ohne Installation in jedem Browser im lokalen Netzwerk.
-- **Desktop-first:** Shadow Atlas läuft nur auf dem Obsidian-Desktop-Client.
+- **Local-first:** campaign data stays in your vault as `.samap` files.
+- **Open source:** code and licence ([GPL-3.0-or-later](https://github.com/Chronicle-of-Whispers)) are fully public.
+- **For the game table:** the table view runs in any browser on your local network, no installation needed.
+- **Desktop-first:** Shadow Atlas only runs on the Obsidian desktop client.
